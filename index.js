@@ -41,17 +41,16 @@ function myCallbackFunction(a) {
 
 //file-system or fs
 const fs = require("fs");
-fs.writeFile(
-  "text.txt",
-  "Hello content! this is Ollobergan /n",
-  function (err) {
-    if (err) throw err;
-    console.log("saved");
-  }
-);
-
+// fs.writeFile("text.txt", "Hello content! this is Ollobergan", function (err) {
+//   if (err) throw err;
+//   console.log("saved");
+// });
 const data = fs.readFileSync("text.txt", "utf8");
 console.log(data);
+
+fs.writeFileSync("text.txt", `${data} \n\t this is a rew line`, "utf8");
+const new_data = fs.readFileSync("text.txt", "utf8");
+console.log(new_data);
 
 //extarnal node modules
 
