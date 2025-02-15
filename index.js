@@ -107,12 +107,15 @@
 
 //files node modules
 // hisob module ni hisob.js dan chaqirib olamiz
+console.log("-----------------------------------");
 const hisob = require("./hisob.js");
 
 hisob.add(200, 4);
 hisob.multiply(20, 4);
 hisob.subtract(20, 4);
 hisob.divide(252, 4);
+
+console.log("-----------------------------------");
 
 const Account = require("./account.js");
 const myAccount = new Account("Ollobergan", 100, "9864-2144-2084");
@@ -122,11 +125,15 @@ const BalusAccount = new Account("Balu", 10230, "9234-1144-2090");
 Account.tellTime(); //time
 Account.aboutClass(); //this is Account class!
 
+console.log("-----------------------------------");
+
 // methods
 myAccount.details(); // Ollobergan's account! with id: 9864-2144-2084
 myAccount.checkBalance(); //100$
 myAccount.deposit(200); //300$
 myAccount.withdraw(50); //250
+
+console.log("-----------------------------------");
 
 // balu's
 BalusAccount.checkBalance();
