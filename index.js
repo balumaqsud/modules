@@ -113,3 +113,16 @@ hisob.add(200, 4);
 hisob.multiply(20, 4);
 hisob.subtract(20, 4);
 hisob.divide(252, 4);
+
+const Account = require("./account.js");
+const myAccount = new Account("Ollobergan", 100, "9864-2144-2084");
+
+//static methods
+Account.tellTime();
+Account.aboutClass(); //this is Account class!
+
+// methods
+myAccount.details(); // Ollobergan's account! with id: 9864-2144-2084
+myAccount.checkBalance(); //100$
+myAccount.deposit(200); //300$
+myAccount.withdraw(50); //250

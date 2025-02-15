@@ -8,7 +8,7 @@ class Account {
   constructor(name, amount, account_id) {
     this.name = name;
     this.#amount = amount;
-    this.#account_id;
+    this.#account_id = account_id;
   }
 
   details() {
