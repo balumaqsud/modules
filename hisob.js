@@ -1,4 +1,5 @@
 //object orqali hisob moduleini yaratdik!
+
 const hisob = {};
 
 hisob.multiply = (a, b) => {
