@@ -139,4 +139,4 @@ console.log("-----------------------------------");
 BalusAccount.checkBalance();
 BalusAccount.deposit(3200);
 BalusAccount.details();
-BalusAccount.withdraw(10);
+BalusAccount.withdraw(200000);

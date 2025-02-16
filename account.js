@@ -25,8 +25,14 @@ class Account {
   }
 
   withdraw(w_amount) {
-    this.#amount -= w_amount;
-    console.log(`${w_amount}$ is withdrawn! you have ${this.#amount}$`);
+    if (w_amount > this.#amount) {
+      console.log(
+        `you have only ${this.#amount}$, you don't have enough money!`
+      );
+    } else {
+      this.#amount -= w_amount;
+      console.log(`${w_amount}$ is withdrawn! you have ${this.#amount}$`);
+    }
   }
 
   static aboutClass() {
