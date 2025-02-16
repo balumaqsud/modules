@@ -1,5 +1,5 @@
-//core node modules
-//setTimeout(functionRef, delay, param1, param2, /* …, */ paramN)
+// core node modules
+// setTimeout(functionRef, delay, param1, param2, /* …, */ paramN);
 // setTimeout(() => {
 //   console.log("this logs after 5 seconds");
 // }, 5000);
@@ -12,7 +12,7 @@
 //   "this logs after 3 seconds"
 // );
 
-//setINterval(functionRef, delay, param1, param2, /* …, */ paramN)
+// setINterval(functionRef, delay, param1, param2, /* …, */ paramN);
 
 // setInterval(() => {
 //   console.log("this logs everey 30 seconds");
@@ -26,7 +26,7 @@
 //   "while this logs every 10 seconds"
 // );
 
-//with mdn syntax
+// // with mdn syntax
 // const intervalID = setInterval(
 //   myCallbackFunction,
 //   10000,
@@ -42,7 +42,7 @@
 //   number++;
 // }, 1000);
 
-//file-system or fs
+// // file-system or fs
 // const fs = require("fs");
 // import fs from "fs";
 
@@ -105,22 +105,23 @@
 // ///// chalk - colorful strings
 // console.log(chalk.blue("Hello world! ") + chalk.yellow("Oliver!"));
 
-//files node modules
+// files node modules
 // hisob module ni hisob.js dan chaqirib olamiz
+
 console.log("-----------------------------------");
 const hisob = require("./hisob.js");
-
-hisob.add(200, 4);
-hisob.multiply(20, 4);
-hisob.subtract(20, 4);
-hisob.divide(252, 4);
+// hisob.add(200, 4);
+// hisob.multiply(20, 4);
+// hisob.subtract(20, 4);
+// hisob.divide(0, 5);
+// hisob.modules(9, 4);
+// hisob.divide(50, 0);
+// hisob.power(10, 6);
 
 console.log("-----------------------------------");
-
 const Account = require("./account.js");
 const myAccount = new Account("Ollobergan", 100, "9864-2144-2084");
-const BalusAccount = new Account("Balu", 10230, "9234-1144-2090");
-
+const BalusAccount = new Account("Balu", 100, "9234-1144-2090");
 //static methods
 Account.tellTime(); //time
 Account.aboutClass(); //this is Account class!
@@ -129,14 +130,14 @@ console.log("-----------------------------------");
 
 // methods
 myAccount.details(); // Ollobergan's account! with id: 9864-2144-2084
-myAccount.checkBalance(); //100$
-myAccount.deposit(200); //300$
-myAccount.withdraw(50); //250
+myAccount.checkBalance();
+myAccount.deposit(100);
+myAccount.withdraw(50);
 
-console.log("-----------------------------------");
+console.log("--------------------------------");
 
-// balu's
-BalusAccount.checkBalance();
-BalusAccount.deposit(3200);
-BalusAccount.details();
-BalusAccount.withdraw(200000);
+myAccount.transferMoney(112, BalusAccount);
+myAccount.showTransactionHistory();
+myAccount.checkBalance();
+
+console.log("--------------------------------");

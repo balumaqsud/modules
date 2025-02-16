@@ -4,6 +4,7 @@ class Account {
   name;
   #amount;
   #account_id;
+  #transactionHistory = [];
 
   constructor(name, amount, account_id) {
     this.name = name;
@@ -21,7 +22,11 @@ class Account {
 
   deposit(d_amount) {
     this.#amount += d_amount;
-    console.log(`${d_amount}$ is deposited! you have ${this.#amount}$`);
+    this.#transactionHistory.push(d_amount);
+
+    console.log(
+      `${this.name}, ${d_amount}$ is deposited! you have ${this.#amount}$`
+    );
   }
 
   withdraw(w_amount) {
@@ -31,7 +36,22 @@ class Account {
       );
     } else {
       this.#amount -= w_amount;
+      this.#transactionHistory.push(`-${w_amount}`);
       console.log(`${w_amount}$ is withdrawn! you have ${this.#amount}$`);
+    }
+  }
+  /// this are added additionally
+  showTransactionHistory() {
+    console.log("history:", this.#transactionHistory);
+  }
+
+  transferMoney(amount, recipientAccount) {
+    if (this.#amount > amount) {
+      this.#amount -= amount;
+      recipientAccount.deposit(amount);
+      console.log(`${amount}$ is sent to ${recipientAccount.name}`);
+    } else {
+      console.log(`your balance, ${this.#amount}, is not enough!`);
     }
   }
 
