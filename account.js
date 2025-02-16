@@ -48,6 +48,7 @@ class Account {
   transferMoney(amount, recipientAccount) {
     if (this.#amount > amount) {
       this.#amount -= amount;
+      //when we call this inside index.js, we give another Object we created
       recipientAccount.deposit(amount);
       console.log(`${amount}$ is sent to ${recipientAccount.name}`);
     } else {
